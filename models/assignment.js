@@ -22,7 +22,17 @@ module.exports = (sequelize, DataTypes) => {
     file: DataTypes.STRING,
     subject: DataTypes.STRING,
     score: DataTypes.FLOAT,
-    itPasses: DataTypes.BOOLEAN
+    itPasses: DataTypes.BOOLEAN,
+    student_id:{
+      type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'studentId',
+        onDelete: 'CASCADE',
+        references:{
+            model: 'students',
+            key: 'id'
+        }
+    }
   }, {
     sequelize,
     modelName: 'Assignment',
