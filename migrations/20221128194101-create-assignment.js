@@ -1,4 +1,5 @@
 'use strict';
+const { DATE } = require('sequelize');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -21,13 +22,18 @@ module.exports = {
       itPasses: {
         type: Sequelize.BOOLEAN
       },
+      student_Id:{
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new DATE()
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new DATE()
       }
     });
   },
