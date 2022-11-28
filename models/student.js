@@ -22,7 +22,17 @@ module.exports = (sequelize, DataTypes) => {
   Student.init({
     studentName: DataTypes.STRING,
     grade: DataTypes.INTEGER,
-    school_Id: DataTypes.INTEGER
+    school_Id: DataTypes.INTEGER,
+    school_Id:{
+      type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'schoolId',
+        onDelete: 'CASCADE',
+        references:{
+            model: 'students',
+            key: 'id'
+        }
+    }
   }, {
     sequelize,
     modelName: 'Student',

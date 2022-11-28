@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     subject: DataTypes.STRING,
     score: DataTypes.FLOAT,
     itPasses: DataTypes.BOOLEAN,
-    student_id:{
+    student_Id:{
       type: DataTypes.INTEGER,
         allowNull: false,
         field: 'studentId',
