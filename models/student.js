@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Student.belongsTo(models.School, { foreignKey: 'school_Id' })
-      Student.hasMany(models.Assignment, { foreignKey: 'student_Id' })
+      Student.hasMany(models.Assignment, { 
+        foreignKey: 'student_Id' 
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+    })
     }
   }
   Student.init({
