@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Student.belongsTo(models.School, { foreignKey: 'school_Id' })
       Student.hasMany(models.Assignment, { 
-        foreignKey: 'student_Id' 
+        foreignKey: 'student_Id', 
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
     })
